@@ -71,7 +71,7 @@ export default function App() {
   const aurora2YScroll = useTransform(scrollY, [0, 500], [0, -100]);
 
   return (
-    <div className="bg-white font-sans text-zinc-900 relative min-h-screen selection:bg-yellow-500 selection:text-white overflow-x-hidden" onMouseMove={handleMouseMove}>
+    <div className="bg-white font-sans text-zinc-900 relative min-h-screen selection:bg-yellow-500 selection:text-white" style={{ overflowX: 'clip' }} onMouseMove={handleMouseMove}>
       {/* Global Studio Lighting (Blobs) */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <motion.div 
@@ -87,7 +87,7 @@ export default function App() {
       <Navbar />
 
       {/* Hero Section - Dynamic Positioning (Linear on Mobile, Sticky on Desktop) */}
-      <section id="hero" className={`${isMobile ? 'relative' : 'fixed top-0 left-0'} w-full h-screen flex flex-col items-center justify-center overflow-hidden z-0 bg-white`}>
+      <section id="hero" className="fixed top-0 left-0 w-full h-screen flex flex-col items-center justify-center overflow-hidden z-0 bg-white">
         
         {/* Cinematic Background Gradient */}
         <div className="absolute inset-0 z-0 overflow-hidden bg-white">
@@ -219,7 +219,7 @@ export default function App() {
 
       {/* Main Content Scroll Layer */}
       <div className="relative z-20 w-full">
-        <div className="hidden md:block h-screen w-full pointer-events-none bg-transparent" />
+        <div className="h-screen w-full pointer-events-none bg-transparent" />
         
         <div className="bg-white relative z-10">
           <DetailedScope />

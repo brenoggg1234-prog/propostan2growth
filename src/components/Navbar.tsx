@@ -11,10 +11,25 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
 
+  // Bloqueio de scroll no body quando o menu mobile está aberto
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none'; // previne travamento de borracha no iOS Safari
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isMobileMenuOpen]);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     
-    // Visibilidade da Navbar
+    // Visibilidade da Navbar: Não esconder se o menu mobile estiver aberto
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else {
@@ -65,7 +80,7 @@ export default function Navbar() {
         <motion.div 
           initial={{ y: -100, opacity: 0 }}
           animate={{ 
-            y: hidden ? -120 : 0, 
+            y: (hidden && !isMobileMenuOpen) ? -120 : 0, 
             opacity: 1,
             backgroundColor: isProjectSection ? "rgba(255, 255, 255, 1)" : (isScrolled ? "rgba(255, 255, 255, 0.7)" : "rgba(255, 255, 255, 0)"),
           }}
@@ -79,7 +94,7 @@ export default function Navbar() {
           {/* Logo */}
           <div 
             className="flex items-center cursor-pointer group shrink-0"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => { setIsMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           >
             <img 
               src={logoImg} 
@@ -140,7 +155,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[45] lg:hidden bg-white px-8 pt-24 h-screen flex flex-col"
+            className="fixed inset-0 z-[45] lg:hidden bg-white/95 backdrop-blur-xl px-8 pt-24 h-[100dvh] flex flex-col"
           >
 
             <div className="flex flex-col gap-6">
