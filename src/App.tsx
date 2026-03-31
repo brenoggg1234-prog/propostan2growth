@@ -144,15 +144,15 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="mb-8 md:mb-12 flex flex-col items-center gap-3"
+            className="mb-8 md:mb-12 flex flex-col items-center gap-4 md:gap-5"
           >
-            <div className="px-4 py-1.5 rounded-full border border-zinc-200 bg-white/50 backdrop-blur-sm shadow-sm flex items-center gap-2">
-              <div className="w-1 h-1 rounded-full bg-yellow-500 animate-pulse" />
-              <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+            <div className="px-6 md:px-8 py-3 md:py-3.5 rounded-full border border-zinc-200 bg-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex items-center justify-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse flex-shrink-0" />
+              <span className="text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] text-zinc-500 text-center max-w-[280px] sm:max-w-none leading-relaxed">
                 Apresentação Estratégica • Proposta Exclusiva
               </span>
             </div>
-            <p className="text-[12px] md:text-[13px] text-zinc-400 max-w-[450px] leading-relaxed font-medium italic">
+            <p className="text-[13px] md:text-[15px] text-[#A1A1AA] max-w-[540px] leading-[1.6] md:leading-relaxed font-medium italic text-center px-4">
               "Este ambiente é uma vitrine da nossa visão. A plataforma final será construída com rigor artesanal, etapa por etapa, sob o padrão de excelência N2 Growth."
             </p>
           </motion.div>
@@ -162,29 +162,48 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.1 }}
-              className="text-[38px] sm:text-[48px] md:text-[58px] lg:text-[72px] font-medium text-zinc-900 text-center leading-[1.1] sm:leading-[1] flex flex-col items-center w-full max-w-[1100px] mx-auto px-4 tracking-tighter"
+              className="text-[42px] sm:text-[52px] md:text-[62px] lg:text-[76px] font-medium text-zinc-900 text-center flex flex-col items-center w-full max-w-[1100px] mx-auto px-4 tracking-[-0.03em] md:tracking-tighter"
             >
-              <div className="flex flex-wrap justify-center overflow-hidden py-1">
-                {titleLine1.map((char, i) => (
-                  <React.Fragment key={i}>
-                    {char === "+" && <div className="w-full" />}
-                    <motion.span
-                      initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
-                      whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                      viewport={{ once: true, amount: 0 }}
-                      transition={{ 
-                        duration: 0.8, 
-                        delay: i * 0.03 + 0.1,
-                        ease: [0.16, 1, 0.3, 1]
-                      }}
-                      className={char === " " ? "mr-4" : "inline-block"}
-                    >
-                      {/* Cor para "Growth" (indices 3-8) e "boss" (indices 17-20) */}
-                      { (i >= 3 && i <= 8) || (i >= 17 && i <= 20) ? (
-                        <span className="text-yellow-500">{char}</span>
-                      ) : char}
-                    </motion.span>
-                  </React.Fragment>
+              <div className="flex justify-center overflow-hidden py-1 w-full leading-[1.1]">
+                {"N2 Growth".split("").map((char, i) => (
+                  <motion.span
+                    key={`l1-${i}`}
+                    initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                    viewport={{ once: true, amount: 0 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: i * 0.03 + 0.1,
+                      ease: [0.16, 1, 0.3, 1]
+                    }}
+                    className={char === " " ? "mr-3 md:mr-4" : "inline-block"}
+                  >
+                    {/* Cor para "Growth" (indices 3-8) */}
+                    { i >= 3 && i <= 8 ? (
+                      <span className="text-yellow-500">{char}</span>
+                    ) : char}
+                  </motion.span>
+                ))}
+              </div>
+              <div className="flex justify-center overflow-hidden py-1 w-full leading-[1.1] md:-mt-2">
+                {"+ Cliniboss.".split("").map((char, i) => (
+                  <motion.span
+                    key={`l2-${i}`}
+                    initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
+                    whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                    viewport={{ once: true, amount: 0 }}
+                    transition={{ 
+                      duration: 0.8, 
+                      delay: (i + 9) * 0.03 + 0.1,
+                      ease: [0.16, 1, 0.3, 1]
+                    }}
+                    className={char === " " ? "mr-3 md:mr-4" : "inline-block"}
+                  >
+                    {/* Cor para "boss" (indices 7-10) */}
+                    { i >= 7 && i <= 10 ? (
+                      <span className="text-yellow-500">{char}</span>
+                    ) : char}
+                  </motion.span>
                 ))}
               </div>
             </motion.h1>
