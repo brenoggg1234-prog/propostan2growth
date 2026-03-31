@@ -161,7 +161,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.1 }}
-              className="text-[42px] sm:text-[48px] md:text-[58px] lg:text-[72px] font-medium text-zinc-900 text-center leading-[1.1] sm:leading-[1] flex flex-col items-center w-full max-w-[1100px] mx-auto px-2 tracking-tighter"
+              className="text-[38px] sm:text-[48px] md:text-[58px] lg:text-[72px] font-medium text-zinc-900 text-center leading-[1.1] sm:leading-[1] flex flex-col items-center w-full max-w-[1100px] mx-auto px-4 tracking-tighter"
             >
               <div className="flex flex-wrap justify-center overflow-hidden py-1">
                 {isMobile ? (
@@ -196,12 +196,12 @@ export default function App() {
             whileInView={{ opacity: 1, filter: "blur(0px)" }}
             viewport={{ once: true, amount: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-zinc-600 text-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 text-[18px] sm:text-[18px] md:text-[21px] leading-[1.6] font-light tracking-tight opacity-90 px-4 sm:px-6 mt-6 md:mt-10"
+            className="text-zinc-600 text-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 text-[16px] sm:text-[18px] md:text-[21px] leading-[1.6] font-light tracking-tight opacity-90 px-6 mt-6 md:mt-10"
           >
             Transformaremos a robustez das 131+ ferramentas da Cliniboss <br className="hidden md:block" />
             em um site fluido de alta conversão. 
             
-            <span className="block mt-6 text-[16px] md:text-[19px] opacity-70 font-normal">
+            <span className="block mt-4 md:mt-6 text-[15px] md:text-[19px] opacity-70 font-normal">
               Uma proposta exclusiva de design, copy e tecnologia feita sob <br className="hidden md:block" />
               medida para o seu ecossistema.
             </span>

@@ -64,7 +64,7 @@ export default function ProcessSection() {
 
 
   return (
-    <section id="processo" className="relative py-24 md:py-40 px-6 md:px-6 flex flex-col items-center justify-center z-20 bg-white overflow-hidden">
+    <section id="processo" className="relative py-16 md:py-40 px-4 sm:px-6 flex flex-col items-center justify-center z-20 bg-white overflow-hidden">
       {/* Background Decorative Element (Trail Line) */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-[0.03] z-0">
         <svg viewBox="0 0 1000 1000" className="w-full h-full">

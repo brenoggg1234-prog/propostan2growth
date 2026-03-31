@@ -95,7 +95,7 @@ export default function DetailedExpertise() {
       </style>
 
       <div className="max-w-6xl w-full mx-auto relative z-10">
-        <header className="mb-24 flex flex-col items-center text-center">
+        <header className="mb-16 md:mb-24 flex flex-col items-center text-center">
             <div className="px-3 py-1.5 text-[11px] font-medium text-zinc-600 bg-black/5 border border-black/10 rounded-full shadow-sm tracking-wide uppercase mb-6">
                 Nossa Expertise
             </div>
@@ -107,7 +107,7 @@ export default function DetailedExpertise() {
             </p>
         </header>
 
-        <main className="flex flex-col gap-32 relative">
+        <main className="flex flex-col gap-20 md:gap-32 relative">
             {/* SERVIÇO 1: WEBSITES */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
                 <div className="lg:col-span-7 visual-card theme-web">

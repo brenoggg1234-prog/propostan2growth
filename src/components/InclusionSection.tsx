@@ -43,7 +43,7 @@ const inclusions = [
 
 export default function InclusionSection() {
   return (
-    <section className="py-24 md:py-32 bg-zinc-50/50 px-6 border-t border-zinc-100 relative overflow-hidden z-20">
+    <section className="py-16 md:py-32 bg-zinc-50/50 px-4 sm:px-6 border-t border-zinc-100 relative overflow-hidden z-20">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
@@ -65,7 +65,7 @@ export default function InclusionSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {inclusions.map((item, index) => (
             <ScrollReveal key={index} direction="up" delay={index * 0.1} className="h-full">
-              <div className="bg-white border border-zinc-200/60 rounded-[24px] p-8 h-full flex flex-col hover:border-yellow-500/40 hover:shadow-xl hover:shadow-yellow-500/5 transition-all duration-500 group relative overflow-hidden">
+              <div className="bg-white border border-zinc-200/60 rounded-[24px] p-6 sm:p-8 h-full flex flex-col hover:border-yellow-500/40 hover:shadow-xl hover:shadow-yellow-500/5 transition-all duration-500 group relative overflow-hidden">
                 {/* Efeito Hover Decorativo (Ícone Grande Transparente) */}
                 <div className="absolute top-0 right-0 p-6 opacity-0 group-hover:opacity-[0.03] transition-opacity duration-700 transform translate-x-4 -translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 pointer-events-none">
                   {React.cloneElement(item.icon, { className: 'w-32 h-32 text-yellow-500' })}

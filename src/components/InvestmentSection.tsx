@@ -13,7 +13,7 @@ export default function InvestmentSection() {
   ];
 
   return (
-    <section id="investimento" className="relative py-24 md:py-40 px-6 bg-white overflow-hidden z-20">
+    <section id="investimento" className="relative py-16 md:py-40 px-6 bg-white overflow-hidden z-20">
       <div className="max-w-5xl mx-auto relative z-10">
         
         {/* Header da Seção */}
@@ -37,7 +37,7 @@ export default function InvestmentSection() {
             {/* Efeito de Brilho no Background */}
             <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 via-yellow-400/10 to-yellow-500/20 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             
-            <div className="relative bg-zinc-50/50 border border-yellow-500/20 rounded-3xl p-8 md:p-12 overflow-hidden">
+            <div className="relative bg-zinc-50/50 border border-yellow-500/20 rounded-3xl p-6 sm:p-8 md:p-12 overflow-hidden">
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Star size={120} className="text-yellow-500 rotate-12" />
               </div>
@@ -68,14 +68,14 @@ export default function InvestmentSection() {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-zinc-50/80 border-b border-zinc-100 uppercase tracking-widest text-[10px] font-bold text-zinc-400">
-                    <th className="px-8 py-6">Entrega Técnica</th>
-                    <th className="px-8 py-6 text-right">Valor</th>
+                    <th className="px-4 py-4 md:px-8 md:py-6 min-w-[150px]">Entrega Técnica</th>
+                    <th className="px-4 py-4 md:px-8 md:py-6 text-right">Valor</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-zinc-50">
                   {investmentItems.map((item, index) => (
                     <tr key={index} className="group hover:bg-zinc-50/30 transition-colors">
-                      <td className="px-8 py-8">
+                      <td className="px-4 py-5 md:px-8 md:py-8">
                         <div className="flex flex-col">
                           <span className="text-[16px] font-medium text-zinc-900 group-hover:text-yellow-600 transition-colors">
                             {item.label}
@@ -88,8 +88,8 @@ export default function InvestmentSection() {
                         </div>
                       </td>
 
-                      <td className="px-8 py-8 text-right">
-                        <span className={`font-mono text-lg ${item.highlight ? 'text-yellow-600 font-bold' : 'text-zinc-900'}`}>
+                      <td className="px-4 py-5 md:px-8 md:py-8 text-right">
+                        <span className={`font-mono text-sm md:text-lg ${item.highlight ? 'text-yellow-600 font-bold' : 'text-zinc-900'}`}>
                           {item.value}
                         </span>
                       </td>
@@ -97,20 +97,20 @@ export default function InvestmentSection() {
                   ))}
                   {/* Linha de Total */}
                   <tr className="bg-zinc-900 text-white">
-                    <td className="px-8 py-10">
+                    <td className="px-4 py-8 md:px-8 md:py-10">
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 bg-yellow-500 rounded-xl flex items-center justify-center shrink-0">
+                        <div className="hidden sm:flex w-10 h-10 bg-yellow-500 rounded-xl items-center justify-center shrink-0">
                           <ShieldCheck size={20} className="text-zinc-900" />
                         </div>
                         <div className="flex flex-col">
-                          <span className="text-xl font-medium tracking-tight">Investimento Total Projeto</span>
-                          <span className="text-[11px] text-white/40 uppercase tracking-widest font-bold mt-1">Escopo Completo Cliniboss</span>
+                          <span className="text-[16px] sm:text-xl font-medium tracking-tight">Investimento Total Projeto</span>
+                          <span className="text-[9px] sm:text-[11px] text-white/40 uppercase tracking-widest font-bold mt-1">Escopo Completo Cliniboss</span>
                         </div>
                       </div>
                     </td>
 
-                    <td className="px-8 py-10 text-right">
-                      <span className="text-3xl md:text-4xl font-medium tracking-tight text-white tabular-nums">
+                    <td className="px-4 py-8 md:px-8 md:py-10 text-right">
+                      <span className="text-2xl sm:text-3xl md:text-4xl font-medium tracking-tight text-white tabular-nums">
                         R$ 18.000
                       </span>
                     </td>
@@ -126,7 +126,7 @@ export default function InvestmentSection() {
           
           {/* Condições de Pagamento */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="h-full bg-zinc-50 border border-zinc-200/60 rounded-[32px] p-8 md:p-10 flex flex-col justify-between">
+            <div className="h-full bg-zinc-50 border border-zinc-200/60 rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 text-zinc-400 mb-6">
                   <CreditCard size={18} />
@@ -161,7 +161,7 @@ export default function InvestmentSection() {
 
           {/* Validade e Assinaturas */}
           <ScrollReveal direction="right" delay={0.5}>
-            <div className="h-full bg-white border border-zinc-100 rounded-[32px] p-8 md:p-10 shadow-sm flex flex-col justify-between relative overflow-hidden">
+            <div className="h-full bg-white border border-zinc-100 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-sm flex flex-col justify-between relative overflow-hidden">
                {/* Selo Digital Background */}
                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border border-zinc-50 rounded-full pointer-events-none opacity-50" />
                
