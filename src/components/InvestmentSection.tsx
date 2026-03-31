@@ -23,7 +23,7 @@ export default function InvestmentSection() {
               Transparência Comercial
             </div>
             <h2 className="text-3xl md:text-[52px] font-medium tracking-tight text-zinc-900 leading-[1.1] max-w-3xl">
-              Investimento em <span className="text-yellow-500">Engenharia Digital</span>
+              Investimento
             </h2>
             <p className="mt-6 text-zinc-500 text-[15px] md:text-lg font-light max-w-xl mx-auto leading-relaxed">
               Quebramos cada etapa do projeto para garantir clareza total sobre onde seu investimento está sendo aplicado. Todos os valores estão expressos em Reais (BRL).
@@ -69,7 +69,6 @@ export default function InvestmentSection() {
                 <thead>
                   <tr className="bg-zinc-50/80 border-b border-zinc-100 uppercase tracking-widest text-[10px] font-bold text-zinc-400">
                     <th className="px-8 py-6">Entrega Técnica</th>
-                    <th className="px-8 py-6">Responsável</th>
                     <th className="px-8 py-6 text-right">Valor</th>
                   </tr>
                 </thead>
@@ -88,11 +87,7 @@ export default function InvestmentSection() {
                           )}
                         </div>
                       </td>
-                      <td className="px-8 py-8">
-                        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-zinc-100 text-zinc-500 border border-zinc-200">
-                           {item.responsible}
-                        </span>
-                      </td>
+
                       <td className="px-8 py-8 text-right">
                         <span className={`font-mono text-lg ${item.highlight ? 'text-yellow-600 font-bold' : 'text-zinc-900'}`}>
                           {item.value}
@@ -113,7 +108,7 @@ export default function InvestmentSection() {
                         </div>
                       </div>
                     </td>
-                    <td className="px-8 py-10"></td>
+
                     <td className="px-8 py-10 text-right">
                       <span className="text-3xl md:text-4xl font-medium tracking-tight text-white tabular-nums">
                         R$ 18.000
@@ -184,16 +179,7 @@ export default function InvestmentSection() {
                  </p>
                </div>
 
-               <div className="mt-8 relative z-10 flex flex-wrap gap-x-12 gap-y-6 border-t border-zinc-50 pt-8">
-                 <div className="flex flex-col">
-                    <span className="text-zinc-900 text-2xl font-medium leading-none">Breno Nery</span>
-                    <span className="text-[9px] text-zinc-400 uppercase tracking-widest mt-2 font-bold">Design & Tech Lead</span>
-                 </div>
-                 <div className="flex flex-col">
-                    <span className="text-zinc-900 text-2xl font-medium leading-none">Marcos Nery</span>
-                    <span className="text-[9px] text-zinc-400 uppercase tracking-widest mt-2 font-bold">Strategic Copywriter</span>
-                 </div>
-               </div>
+
             </div>
           </ScrollReveal>
 
