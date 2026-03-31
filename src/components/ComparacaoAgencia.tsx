@@ -140,13 +140,13 @@ export default function ComparacaoAgencia() {
                 </span>
                 <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center md:items-end">
                   <div className="flex flex-col items-center md:items-end group">
-                    <p className="text-zinc-900 font-serif italic text-2xl leading-none">Breno Nery</p>
+                    <p className="text-zinc-900 font-medium text-2xl leading-none">Breno Nery</p>
                     <div className="w-full h-px bg-yellow-500/0 group-hover:bg-yellow-500/40 transition-all duration-700 mt-1 max-w-[100px]" />
                     <p className="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Design & Tech Lead</p>
                   </div>
                   <div className="hidden md:block w-px h-6 bg-zinc-100 self-center" />
                   <div className="flex flex-col items-center md:items-end group">
-                    <p className="text-zinc-900 font-serif italic text-2xl leading-none">Marcos Nery</p>
+                    <p className="text-zinc-900 font-medium text-2xl leading-none">Marcos Nery</p>
                     <div className="w-full h-px bg-yellow-500/0 group-hover:bg-yellow-500/40 transition-all duration-700 mt-1 max-w-[100px]" />
                     <p className="text-[10px] text-zinc-400 uppercase tracking-widest mt-1">Strategic Copywriter</p>
                   </div>

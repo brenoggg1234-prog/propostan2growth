@@ -23,7 +23,7 @@ export default function InvestmentSection() {
               Transparência Comercial
             </div>
             <h2 className="text-3xl md:text-[52px] font-medium tracking-tight text-zinc-900 leading-[1.1] max-w-3xl">
-              Investimento em <span className="text-yellow-500 font-serif italic">Engenharia Digital</span>
+              Investimento em <span className="text-yellow-500">Engenharia Digital</span>
             </h2>
             <p className="mt-6 text-zinc-500 text-[15px] md:text-lg font-light max-w-xl mx-auto leading-relaxed">
               Quebramos cada etapa do projeto para garantir clareza total sobre onde seu investimento está sendo aplicado.
@@ -186,11 +186,11 @@ export default function InvestmentSection() {
 
                <div className="mt-8 relative z-10 flex flex-wrap gap-x-12 gap-y-6 border-t border-zinc-50 pt-8">
                  <div className="flex flex-col">
-                    <span className="text-zinc-900 font-serif italic text-2xl leading-none">Breno Nery</span>
+                    <span className="text-zinc-900 text-2xl font-medium leading-none">Breno Nery</span>
                     <span className="text-[9px] text-zinc-400 uppercase tracking-widest mt-2 font-bold">Design & Tech Lead</span>
                  </div>
                  <div className="flex flex-col">
-                    <span className="text-zinc-900 font-serif italic text-2xl leading-none">Marcos Nery</span>
+                    <span className="text-zinc-900 text-2xl font-medium leading-none">Marcos Nery</span>
                     <span className="text-[9px] text-zinc-400 uppercase tracking-widest mt-2 font-bold">Strategic Copywriter</span>
                  </div>
                </div>
