@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, ShieldCheck, CreditCard, Calendar, Check } from 'lucide-react';
+import { Star, ShieldCheck, CreditCard, Calendar, Check, Clock, PlusSquare } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 export default function InvestmentSection() {
@@ -126,32 +126,47 @@ export default function InvestmentSection() {
           
           {/* Condições de Pagamento */}
           <ScrollReveal direction="left" delay={0.4}>
-            <div className="h-full bg-zinc-50 border border-zinc-200/60 rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+            <div className="h-full bg-[#2A2A2A] border border-white/5 rounded-[32px] p-6 sm:p-8 md:p-10 flex flex-col justify-between">
               <div>
                 <div className="flex items-center gap-3 text-zinc-400 mb-6">
                   <CreditCard size={18} />
-                  <span className="text-[11px] font-bold uppercase tracking-widest">Fluxo de Pagamento</span>
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-zinc-300">Fluxo de Pagamento</span>
                 </div>
                 <div className="space-y-6">
                   <div className="flex justify-between items-end">
                     <div className="flex flex-col">
-                      <span className="text-zinc-500 text-sm font-light">Entrada na Assinatura</span>
-                      <span className="text-zinc-900 font-medium text-xl">50% — R$ 9.000</span>
+                      <span className="text-zinc-400 text-sm font-light mb-1">Parcela inicial</span>
+                      <span className="text-zinc-100 font-medium text-xl">50% — R$ 9.000</span>
                     </div>
-                    <div className="flex flex-col items-end text-zinc-300">
-                      <Calendar size={16} className="mb-1" />
-                      <span className="text-[9px] uppercase font-bold">Imediato</span>
+                    <div className="flex flex-col items-end text-zinc-400">
+                      <PlusSquare size={16} className="mb-2" />
+                      <span className="text-[9px] uppercase font-bold text-zinc-300">Imediato</span>
                     </div>
                   </div>
-                  <div className="w-full h-px bg-zinc-200" />
+                  
+                  <div className="w-full h-px bg-white/10" />
+                  
                   <div className="flex justify-between items-end">
                     <div className="flex flex-col">
-                      <span className="text-zinc-500 text-sm font-light">Final na Entrega</span>
-                      <span className="text-zinc-900 font-medium text-xl">50% — R$ 9.000</span>
+                      <span className="text-zinc-400 text-sm font-light mb-1">30 dias após o início</span>
+                      <span className="text-zinc-100 font-medium text-xl">25% — R$ 4.500</span>
                     </div>
-                    <div className="flex flex-col items-end text-zinc-300">
-                      <Check size={16} className="mb-1" />
-                      <span className="text-[9px] uppercase font-bold">Publicação</span>
+                    <div className="flex flex-col items-end text-zinc-400">
+                      <Clock size={16} className="mb-2" />
+                      <span className="text-[9px] uppercase font-bold text-zinc-300">30 Dias</span>
+                    </div>
+                  </div>
+
+                  <div className="w-full h-px bg-white/10" />
+
+                  <div className="flex justify-between items-end">
+                    <div className="flex flex-col">
+                      <span className="text-zinc-400 text-sm font-light mb-1">Final na Entrega</span>
+                      <span className="text-zinc-100 font-medium text-xl">25% — R$ 4.500</span>
+                    </div>
+                    <div className="flex flex-col items-end text-zinc-400">
+                      <Check size={16} className="mb-2" />
+                      <span className="text-[9px] uppercase font-bold text-zinc-300">Publicação</span>
                     </div>
                   </div>
                 </div>

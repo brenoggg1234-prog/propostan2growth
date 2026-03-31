@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 
 interface ScrollRevealProps {
@@ -17,24 +17,41 @@ export default function ScrollReveal({
   className = "",
   width = '100%'
 }: ScrollRevealProps) {
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div className={className} style={{ width }}>
+        {children}
+      </div>
+    );
+  }
 
   const directions = {
-    up: { y: isMobile ? 30 : 60, x: 0, scale: 0.98, filter: isMobile ? "none" : "blur(10px)" },
-    down: { y: isMobile ? -30 : -60, x: 0, scale: 0.98, filter: isMobile ? "none" : "blur(10px)" },
-    left: { x: isMobile ? 30 : 60, y: 0, scale: 0.98, filter: isMobile ? "none" : "blur(10px)" },
-    right: { x: isMobile ? -30 : -60, y: 0, scale: 0.98, filter: isMobile ? "none" : "blur(10px)" },
-    none: { x: 0, y: 0, scale: 0.98, filter: isMobile ? "none" : "blur(10px)" }
+    up: { y: 60, x: 0, scale: 0.98, filter: "blur(10px)" },
+    down: { y: -60, x: 0, scale: 0.98, filter: "blur(10px)" },
+    left: { x: 60, y: 0, scale: 0.98, filter: "blur(10px)" },
+    right: { x: -60, y: 0, scale: 0.98, filter: "blur(10px)" },
+    none: { x: 0, y: 0, scale: 0.98, filter: "blur(10px)" }
   };
 
   return (
     <motion.div
       initial={{ ...directions[direction], opacity: 0 }}
       whileInView={{ x: 0, y: 0, opacity: 1, scale: 1, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: isMobile ? "-5%" : "-10%" }}
+      viewport={{ once: true, margin: "-10%" }}
       transition={{ 
-        duration: isMobile ? 0.5 : 1.2,
-        delay: isMobile ? delay * 0.2 : delay, 
+        duration: 1.2,
+        delay: delay, 
         ease: [0.16, 1, 0.3, 1] 
       }}
       className={className}

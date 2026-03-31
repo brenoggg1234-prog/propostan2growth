@@ -6,9 +6,7 @@ import orthogonalImg from './assets/orthogonal-studio.png';
 import DetailedScope from './components/DetailedScope';
 import ProcessSection from './components/ProcessSection';
 import InvestmentSection from './components/InvestmentSection';
-import TeamSection from './components/TeamSection';
 import FinalCTA from './components/FinalCTA';
-import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import MagneticButton from './components/MagneticButton';
 import ScrollReveal from './components/ScrollReveal';
@@ -74,11 +72,11 @@ export default function App() {
       {/* Global Studio Lighting (Blobs) */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <motion.div 
-          style={{ x: aurora1X, y: aurora1Y }}
+          style={isMobile ? undefined : { x: aurora1X, y: aurora1Y }}
           className="absolute top-[-10%] left-[-5%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] studio-blob studio-blob-yellow opacity-[0.03] md:opacity-10" 
         />
         <motion.div 
-          style={{ x: aurora2X, y: aurora2Y }}
+          style={isMobile ? undefined : { x: aurora2X, y: aurora2Y }}
           className="absolute bottom-[10%] right-[-5%] w-[400px] h-[400px] md:w-[600px] md:h-[600px] studio-blob studio-blob-yellow opacity-[0.02] md:opacity-5" 
         />
       </div>
@@ -97,7 +95,11 @@ export default function App() {
 
         <motion.div 
           className="absolute inset-0 z-[1] opacity-20 pointer-events-none" 
-          style={{ 
+          style={isMobile ? {
+            backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)`,
+            backgroundSize: '80px 80px',
+            maskImage: 'radial-gradient(circle at center, black, transparent 80%)'
+          } : { 
             backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)`,
             backgroundSize: '80px 80px',
             maskImage: 'radial-gradient(circle at center, black, transparent 80%)',
@@ -107,42 +109,42 @@ export default function App() {
 
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div 
-            style={{ x: aurora1X, y: useTransform(scrollY, [0, 500], [0, -80]) }}
-            animate={isMobile ? {} : { 
+            style={isMobile ? undefined : { x: aurora1X, y: useTransform(scrollY, [0, 500], [0, -80]) }}
+            animate={isMobile ? undefined : { 
               scale: [1, 1.15, 1],
               opacity: [0.1, 0.18, 0.1]
             }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            transition={isMobile ? undefined : { duration: 15, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-yellow-600/30 blur-[130px] rounded-full"
           />
           <motion.div 
-            style={{ x: aurora2X, y: useTransform(scrollY, [0, 500], [0, -100]) }}
-            animate={isMobile ? {} : { 
+            style={isMobile ? undefined : { x: aurora2X, y: useTransform(scrollY, [0, 500], [0, -100]) }}
+            animate={isMobile ? undefined : { 
               scale: [1.15, 1, 1.15],
               opacity: [0.05, 0.13, 0.05]
             }}
-            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+            transition={isMobile ? undefined : { duration: 18, repeat: Infinity, ease: "easeInOut" }}
             className="absolute bottom-[-15%] right-[-15%] w-[70%] h-[70%] bg-blue-600/20 blur-[160px] rounded-full"
           />
         </div>
 
         <motion.div 
-          style={{ x: smoothX, y: smoothY, opacity: opacityHero }}
+          style={isMobile ? undefined : { x: smoothX, y: smoothY, opacity: opacityHero }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/10 blur-[100px] rounded-full pointer-events-none z-0"
         />
 
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          style={{ y: heroY, opacity: heroOpacity, scale: heroScale, filter: heroBlur }}
-          transition={{ duration: 0.8 }}
+          initial={isMobile ? undefined : { opacity: 0, y: 20 }}
+          animate={isMobile ? undefined : { opacity: 1, y: 0 }}
+          style={isMobile ? undefined : { y: heroY, opacity: heroOpacity, scale: heroScale, filter: heroBlur }}
+          transition={isMobile ? undefined : { duration: 0.8 }}
           className="relative z-10 flex flex-col items-center px-4 w-full max-w-7xl mx-auto text-center"
         >
           {/* Posicionamento de Valor: Disclaimer de Qualidade */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            initial={isMobile ? undefined : { opacity: 0, scale: 0.95 }}
+            animate={isMobile ? undefined : { opacity: 1, scale: 1 }}
+            transition={isMobile ? undefined : { delay: 0.5, duration: 1 }}
             className="mb-8 md:mb-12 flex flex-col items-center gap-3"
           >
             <div className="px-4 py-1.5 rounded-full border border-zinc-200 bg-white/50 backdrop-blur-sm shadow-sm flex items-center gap-2">
@@ -158,9 +160,9 @@ export default function App() {
 
           <div className="mb-6 sm:mb-8 select-none w-full">
             <motion.h1 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.1 }}
+              initial={isMobile ? undefined : { opacity: 0 }}
+              animate={isMobile ? undefined : { opacity: 1 }}
+              transition={isMobile ? undefined : { duration: 0.1 }}
               className="text-[38px] sm:text-[48px] md:text-[58px] lg:text-[72px] font-medium text-zinc-900 text-center leading-[1.1] sm:leading-[1] flex flex-col items-center w-full max-w-[1100px] mx-auto px-4 tracking-tighter"
             >
               <div className="flex flex-wrap justify-center overflow-hidden py-1">
@@ -192,10 +194,10 @@ export default function App() {
           </div>
 
           <motion.p 
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
-            viewport={{ once: true, amount: 0 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            initial={isMobile ? undefined : { opacity: 0, filter: "blur(8px)" }}
+            whileInView={isMobile ? undefined : { opacity: 1, filter: "blur(0px)" }}
+            viewport={isMobile ? undefined : { once: true, amount: 0 }}
+            transition={isMobile ? undefined : { duration: 1, delay: 0.6 }}
             className="text-zinc-600 text-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 text-[16px] sm:text-[18px] md:text-[21px] leading-[1.6] font-light tracking-tight opacity-90 px-6 mt-6 md:mt-10"
           >
             Transformaremos a robustez das 131+ ferramentas da Cliniboss <br className="hidden md:block" />
@@ -209,15 +211,17 @@ export default function App() {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
-        >
-          <span className="text-[9px] text-zinc-900/30 uppercase tracking-[0.4em] font-medium">Explore</span>
-          <div className="w-[1px] h-16 bg-gradient-to-b from-yellow-500/0 via-yellow-500/50 to-yellow-500/0 animate-bounce" />
-        </motion.div>
+        {!isMobile && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+          >
+            <span className="text-[9px] text-zinc-900/30 uppercase tracking-[0.4em] font-medium">Explore</span>
+            <div className="w-[1px] h-16 bg-gradient-to-b from-yellow-500/0 via-yellow-500/50 to-yellow-500/0 animate-bounce" />
+          </motion.div>
+        )}
       </section>
 
       {/* Main Content Scroll Layer */}
@@ -229,15 +233,10 @@ export default function App() {
           <InclusionSection />
           <ProcessSection />
           <InvestmentSection />
-          <TeamSection />
         </div>
 
         <div className="relative z-20 -mb-40 md:-mb-64">
           <FinalCTA />
-        </div>
-
-        <div className="relative bg-zinc-50 z-10 pt-24 md:pt-48 pb-10">
-          <Footer />
         </div>
       </div>
     </div>
