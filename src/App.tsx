@@ -166,23 +166,25 @@ export default function App() {
             >
               <div className="flex flex-wrap justify-center overflow-hidden py-1">
                 {titleLine1.map((char, i) => (
-                  <motion.span
-                    key={i}
-                    initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
-                    viewport={{ once: true, amount: 0 }}
-                    transition={{ 
-                      duration: 0.8, 
-                      delay: i * 0.03 + 0.1,
-                      ease: [0.16, 1, 0.3, 1]
-                    }}
-                    className={char === " " ? "mr-4" : "inline-block"}
-                  >
-                    {/* Cor para "Growth" (indices 3-8) e "boss" (indices 17-20) */}
-                    { (i >= 3 && i <= 8) || (i >= 17 && i <= 20) ? (
-                      <span className="text-yellow-500">{char}</span>
-                    ) : char}
-                  </motion.span>
+                  <React.Fragment key={i}>
+                    {char === "+" && <div className="w-full" />}
+                    <motion.span
+                      initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
+                      whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                      viewport={{ once: true, amount: 0 }}
+                      transition={{ 
+                        duration: 0.8, 
+                        delay: i * 0.03 + 0.1,
+                        ease: [0.16, 1, 0.3, 1]
+                      }}
+                      className={char === " " ? "mr-4" : "inline-block"}
+                    >
+                      {/* Cor para "Growth" (indices 3-8) e "boss" (indices 17-20) */}
+                      { (i >= 3 && i <= 8) || (i >= 17 && i <= 20) ? (
+                        <span className="text-yellow-500">{char}</span>
+                      ) : char}
+                    </motion.span>
+                  </React.Fragment>
                 ))}
               </div>
             </motion.h1>

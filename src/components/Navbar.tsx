@@ -173,16 +173,6 @@ export default function Navbar() {
                   {link.label}
                 </motion.button>
               ))}
-              
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.1 }}
-                onClick={() => window.open("https://wa.me/5538998089124?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento.", "_blank")}
-                className="mt-8 bg-[#eab308] text-white p-6 rounded-2xl text-xl font-bold flex items-center justify-between"
-              >
-                Faça um Orçamento <ArrowRight size={24} />
-              </motion.button>
             </div>
           </motion.div>
         )}
