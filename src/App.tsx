@@ -160,11 +160,9 @@ export default function App() {
             </div>
 
             <div className="relative px-6">
-              <span className="absolute -top-3 -left-2 text-4xl text-yellow-500/20 font-serif font-black leading-none select-none">"</span>
               <p className="text-[14px] md:text-[16px] text-zinc-500 max-w-[580px] leading-[1.7] md:leading-relaxed font-light italic text-center relative z-10">
                 Este ambiente é uma vitrine da nossa visão. A plataforma final será construída com rigor artesanal, etapa por etapa, sob o padrão de excelência <span className="font-semibold text-zinc-700 not-italic">N2 Growth</span>.
               </p>
-              <span className="absolute -bottom-5 -right-2 text-4xl text-yellow-500/20 font-serif font-black leading-none select-none">"</span>
             </div>
           </motion.div>
 
