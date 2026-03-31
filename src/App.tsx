@@ -144,20 +144,31 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="mb-8 md:mb-12 flex flex-col items-center gap-4 md:gap-5"
+            className="mb-8 md:mb-14 flex flex-col items-center gap-6 md:gap-8"
           >
-            <div className="px-6 md:px-8 py-3 md:py-3.5 rounded-full border border-zinc-200 bg-white shadow-[0_4px_20px_rgb(0,0,0,0.03)] flex items-center justify-center gap-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-pulse flex-shrink-0" />
-              <span className="text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] text-zinc-500 text-center max-w-[280px] sm:max-w-none leading-relaxed">
-                Apresentação Estratégica • Proposta Exclusiva
-              </span>
+            <div className="relative group">
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative px-6 md:px-8 py-3 md:py-3.5 rounded-full border border-black/5 bg-white/80 backdrop-blur-xl shadow-[0_2px_20px_rgb(0,0,0,0.04)] flex items-center justify-center gap-3 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-50/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-tr from-yellow-600 to-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.5)] animate-pulse flex-shrink-0" />
+                <span className="text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] bg-clip-text text-transparent bg-gradient-to-r from-zinc-700 to-zinc-500 text-center max-w-[280px] sm:max-w-none leading-relaxed flex flex-wrap justify-center items-center gap-x-2">
+                  <span>Apresentação Estratégica</span>
+                  <span className="text-zinc-300 hidden sm:inline">•</span>
+                  <span>Proposta Exclusiva</span>
+                </span>
+              </div>
             </div>
-            <p className="text-[13px] md:text-[15px] text-[#A1A1AA] max-w-[540px] leading-[1.6] md:leading-relaxed font-medium italic text-center px-4">
-              "Este ambiente é uma vitrine da nossa visão. A plataforma final será construída com rigor artesanal, etapa por etapa, sob o padrão de excelência N2 Growth."
-            </p>
+
+            <div className="relative px-6">
+              <span className="absolute -top-3 -left-2 text-4xl text-yellow-500/20 font-serif font-black leading-none select-none">"</span>
+              <p className="text-[14px] md:text-[16px] text-zinc-500 max-w-[580px] leading-[1.7] md:leading-relaxed font-light italic text-center relative z-10">
+                Este ambiente é uma vitrine da nossa visão. A plataforma final será construída com rigor artesanal, etapa por etapa, sob o padrão de excelência <span className="font-semibold text-zinc-700 not-italic">N2 Growth</span>.
+              </p>
+              <span className="absolute -bottom-5 -right-2 text-4xl text-yellow-500/20 font-serif font-black leading-none select-none">"</span>
+            </div>
           </motion.div>
 
-          <div className="mb-6 sm:mb-8 select-none w-full">
+          <div className="mb-6 sm:mb-8 select-none w-full relative z-20">
             <motion.h1 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -209,21 +220,31 @@ export default function App() {
             </motion.h1>
           </div>
 
-          <motion.p 
-            initial={{ opacity: 0, filter: "blur(8px)" }}
-            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+          <motion.div 
+            initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             viewport={{ once: true, amount: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="text-zinc-600 text-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 text-[16px] sm:text-[18px] md:text-[21px] leading-[1.6] font-light tracking-tight opacity-90 px-6 mt-6 md:mt-10"
+            className="relative flex flex-col items-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 lg:mt-6 px-6 z-20"
           >
-            Transformaremos a robustez das 131+ ferramentas da Cliniboss <br className="hidden md:block" />
-            em um site fluido de alta conversão. 
+            <h2 className="text-[17px] sm:text-[20px] md:text-[24px] leading-[1.6] md:leading-[1.5] font-light tracking-tight text-zinc-600 mb-6 text-center">
+              Transformaremos a robustez das <span className="bg-yellow-500/10 text-yellow-600 font-medium px-2.5 py-1 rounded-lg mx-1 whitespace-nowrap border border-yellow-500/20 shadow-sm inline-block">131+ ferramentas</span> da Cliniboss 
+              <br className="hidden md:block" /> em um site fluido de alta conversão. 
+            </h2>
             
-            <span className="block mt-4 md:mt-6 text-[15px] md:text-[19px] opacity-70 font-normal">
-              Uma proposta exclusiva de design, copy e tecnologia feita sob <br className="hidden md:block" />
-              medida para o seu ecossistema.
-            </span>
-          </motion.p>
+            <div className="flex flex-col items-center justify-center pt-2">
+              <div className="flex items-center gap-4 text-[14px] sm:text-[15px] md:text-[17px] text-zinc-500 font-normal">
+                <div className="h-[1px] w-6 md:w-16 bg-gradient-to-r from-transparent to-zinc-300"></div>
+                <span className="opacity-95 text-center px-2">
+                  Uma proposta exclusiva de <span className="text-zinc-800 font-medium whitespace-nowrap">design, copy e tecnologia</span>
+                </span>
+                <div className="h-[1px] w-6 md:w-16 bg-gradient-to-l from-transparent to-zinc-300"></div>
+              </div>
+              <div className="text-zinc-400 text-[13px] sm:text-[14px] md:text-[15px] mt-1 md:mt-2 font-light">
+                feita sob medida para o seu ecossistema.
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         {/* Scroll Indicator */}
