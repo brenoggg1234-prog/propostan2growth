@@ -198,8 +198,8 @@ export default function App() {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-zinc-600 text-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 text-[18px] sm:text-[18px] md:text-[21px] leading-[1.6] font-light tracking-tight opacity-90 px-4 sm:px-6 mt-6 md:mt-10"
           >
-            Transformamos a robustez das 131+ ferramentas da Cliniboss <br className="hidden md:block" />
-            em uma experiência digital fluida, minimalista e de alta conversão. 
+            Transformaremos a robustez das 131+ ferramentas da Cliniboss <br className="hidden md:block" />
+            em um site fluido de alta conversão. 
             
             <span className="block mt-6 text-[16px] md:text-[19px] opacity-70 font-normal">
               Uma proposta exclusiva de design, copy e tecnologia feita sob <br className="hidden md:block" />
