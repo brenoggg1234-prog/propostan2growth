@@ -26,7 +26,7 @@ export default function InvestmentSection() {
               Investimento em <span className="text-yellow-500">Engenharia Digital</span>
             </h2>
             <p className="mt-6 text-zinc-500 text-[15px] md:text-lg font-light max-w-xl mx-auto leading-relaxed">
-              Quebramos cada etapa do projeto para garantir clareza total sobre onde seu investimento está sendo aplicado.
+              Quebramos cada etapa do projeto para garantir clareza total sobre onde seu investimento está sendo aplicado. Todos os valores estão expressos em Reais (BRL).
             </p>
           </div>
         </ScrollReveal>
