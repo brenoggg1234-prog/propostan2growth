@@ -66,6 +66,9 @@ export default function App() {
   const heroScale = useTransform(scrollY, [0, 800], [1, isMobile ? 1 : 0.95]);
   const heroOpacity = useTransform(scrollY, [0, 800], [1, isMobile ? 1 : 0.2]);
   const heroBlur = useTransform(scrollY, [0, 600], ["blur(0px)", "blur(0px)"]);
+  
+  const aurora1YScroll = useTransform(scrollY, [0, 500], [0, -80]);
+  const aurora2YScroll = useTransform(scrollY, [0, 500], [0, -100]);
 
   return (
     <div className="bg-white font-sans text-zinc-900 relative min-h-screen selection:bg-yellow-500 selection:text-white overflow-x-hidden" onMouseMove={handleMouseMove}>
@@ -109,7 +112,7 @@ export default function App() {
 
         <div className="absolute inset-0 z-0 overflow-hidden">
           <motion.div 
-            style={isMobile ? undefined : { x: aurora1X, y: useTransform(scrollY, [0, 500], [0, -80]) }}
+            style={isMobile ? undefined : { x: aurora1X, y: aurora1YScroll }}
             animate={isMobile ? undefined : { 
               scale: [1, 1.15, 1],
               opacity: [0.1, 0.18, 0.1]
@@ -118,7 +121,7 @@ export default function App() {
             className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-yellow-600/30 blur-[130px] rounded-full"
           />
           <motion.div 
-            style={isMobile ? undefined : { x: aurora2X, y: useTransform(scrollY, [0, 500], [0, -100]) }}
+            style={isMobile ? undefined : { x: aurora2X, y: aurora2YScroll }}
             animate={isMobile ? undefined : { 
               scale: [1.15, 1, 1.15],
               opacity: [0.05, 0.13, 0.05]
