@@ -155,7 +155,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[45] lg:hidden bg-white/95 backdrop-blur-xl px-8 pt-24 h-[100dvh] flex flex-col"
+            className="fixed inset-0 z-[45] lg:hidden bg-white/95 backdrop-blur-md px-8 pt-24 h-screen flex flex-col"
           >
 
             <div className="flex flex-col gap-6">

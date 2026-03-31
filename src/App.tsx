@@ -71,7 +71,7 @@ export default function App() {
   const aurora2YScroll = useTransform(scrollY, [0, 500], [0, -100]);
 
   return (
-    <div className="bg-white font-sans text-zinc-900 relative min-h-screen selection:bg-yellow-500 selection:text-white" style={{ overflowX: 'clip' }} onMouseMove={handleMouseMove}>
+    <div className="bg-white font-sans text-zinc-900 relative min-h-screen selection:bg-yellow-500 selection:text-white overflow-x-hidden" onMouseMove={handleMouseMove}>
       {/* Global Studio Lighting (Blobs) */}
       <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
         <motion.div 
@@ -114,7 +114,7 @@ export default function App() {
               opacity: [0.1, 0.18, 0.1]
             }}
             transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-yellow-600/30 blur-[130px] rounded-full"
+            className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-yellow-600/30 blur-[70px] md:blur-[130px] rounded-full"
           />
           <motion.div 
             style={{ x: aurora2X, y: aurora2YScroll }}
@@ -123,13 +123,13 @@ export default function App() {
               opacity: [0.05, 0.13, 0.05]
             }}
             transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute bottom-[-15%] right-[-15%] w-[70%] h-[70%] bg-blue-600/20 blur-[160px] rounded-full"
+            className="absolute bottom-[-15%] right-[-15%] w-[70%] h-[70%] bg-blue-600/20 blur-[80px] md:blur-[160px] rounded-full"
           />
         </div>
 
         <motion.div 
           style={{ x: smoothX, y: smoothY, opacity: opacityHero }}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/10 blur-[100px] rounded-full pointer-events-none z-0"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/10 blur-[50px] md:blur-[100px] rounded-full pointer-events-none z-0"
         />
 
         <motion.div 
@@ -148,7 +148,7 @@ export default function App() {
           >
             <div className="relative group">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 rounded-full blur opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative px-6 md:px-8 py-3 md:py-3.5 rounded-full border border-black/5 bg-white/80 backdrop-blur-xl shadow-[0_2px_20px_rgb(0,0,0,0.04)] flex items-center justify-center gap-3 overflow-hidden">
+              <div className="relative px-6 md:px-8 py-3 md:py-3.5 rounded-full border border-black/5 bg-white/80 backdrop-blur-md shadow-[0_2px_20px_rgb(0,0,0,0.04)] flex items-center justify-center gap-3 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-50/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-tr from-yellow-600 to-yellow-400 shadow-[0_0_10px_rgba(234,179,8,0.5)] animate-pulse flex-shrink-0" />
                 <span className="text-[10px] sm:text-[11px] md:text-xs font-bold uppercase tracking-[0.25em] bg-clip-text text-transparent bg-gradient-to-r from-zinc-700 to-zinc-500 text-center max-w-[280px] sm:max-w-none leading-relaxed flex flex-wrap justify-center items-center gap-x-2">
@@ -177,8 +177,8 @@ export default function App() {
                 {"N2 Growth".split("").map((char, i) => (
                   <motion.span
                     key={`l1-${i}`}
-                    initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{ 
                       duration: 0.8, 
@@ -198,8 +198,8 @@ export default function App() {
                 {"+ Cliniboss.".split("").map((char, i) => (
                   <motion.span
                     key={`l2-${i}`}
-                    initial={{ opacity: 0, filter: "blur(10px)", scale: 1.1 }}
-                    whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                    initial={{ opacity: 0, scale: 1.1 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, amount: 0 }}
                     transition={{ 
                       duration: 0.8, 
@@ -219,8 +219,8 @@ export default function App() {
           </div>
 
           <motion.div 
-            initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-            whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="relative flex flex-col items-center max-w-[650px] md:max-w-[850px] mb-8 sm:mb-10 lg:mt-6 px-6 z-20"
